@@ -4,10 +4,11 @@
 // const channels = require.context('.', true, /_channel\.js$/)
 // channels.keys().forEach(channels)
 
-
-const testDiv = document.createElement('div')
-
-const h1 = document.getElementById('h1')
-h1.innerText = "AYYYYYY"
+document.addEventListener("DOMContentLoaded", function() {
+    const testDiv = document.createElement('div')
 
 
+
+
+
+});
