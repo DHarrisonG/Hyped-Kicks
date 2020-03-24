@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hyped Kicks</title>
+    <link rel="stylesheet" href="app/assets/stylesheets/create.css">
+    <script src="app/javascript/channels/create.js"></script>
+</head>
+<div class="header">
+    <a href="#index"> <img src ="app/assets/images/logo1.png" style = "width: 300px;" style="height: 200px;"></a>
+    <div class="header-right">
+      <a class="active" href="#home">Home</a>
+      <a href="index.html">Logout</a>
+      <a href="newuser.html">Signup</a>
+    </div>
+  </div>
+  
+
+<div class = 'centerText'>
+    <h1>List a shoe release</h1>
+    <form id="createshoe">
+        Shoe Name: <br><input type="text" name="shoeName" onfocus="this.value=''" value="Shoe Name"><br><br>
+        Description of Shoe: <br><input type="text" name="description" onfocus="this.value=''" value="Description"><br><br>
+        Release Date: <br><input type="text" name="Rdate" onfocus="this.value=''" value="Release Date"><br><br>
+        Image URL: <br><input type="text" name="imageURL" onfocus="this.value=''" value="Image URL"><br><br>
+        <input type="submit" onclick="window.location.href ='index.html';" value="Submit">
+    </form>
+</div>

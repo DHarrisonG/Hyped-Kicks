@@ -7,6 +7,10 @@
 document.addEventListener("DOMContentLoaded", function() {
     const testDiv = document.createElement('div')
 
+    function myFunction() {
+        var createdShoe = document.getElementById("createshoe").target;
+        document.getElementById("demo").innerHTML = createdShoe;
+    }
 
 
 
