@@ -6,6 +6,6 @@ class ShoesController < ApplicationController
 
     def show
         @shoe = Shoe.find(params[:id])
-        render json: @shoe
+        render json: @shoe, except: [:created_at, :updated_at], include: :comments 
     end
 end
