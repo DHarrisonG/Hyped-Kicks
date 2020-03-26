@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log(e)
         const shoeId = e.target.dataset.id
         console.log(shoeHype)
-        fetch(`http://localhost:3000/shoe/${shoeId}`, {
+        fetch(`http://localhost:3000/shoes/${shoeId}`, {
             method: "PATCH",
             headers: {
                 'Accept': 'application/json',
