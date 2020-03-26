@@ -7,8 +7,8 @@
 document.addEventListener("DOMContentLoaded", function() {
     const testDiv = document.createElement('div')
 
-    fetchShoes().then(renderShoes)
-
+    fetchShoes()
+    
     let shoeHype;
     let comments
 
@@ -27,19 +27,27 @@ document.addEventListener("DOMContentLoaded", function() {
     function fetchShoes(){
         return fetch('http://localhost:3000/shoes')
         .then(r => r.json())
+        .then(shoes => {
+            renderShoes(shoes)
+        })
     }
 
     function renderShoes(shoes){
-        console.log(shoes.sort( shoe => {
-            shoe.hype_count
-        }))
+        shoes.sort((a, b) => {
+            if (a.hype_count < b.hype_count){
+              return 1
+            } else {
+              return -1
+            }
+          })
         shoes.forEach(shoe => listShoes(shoe))
-        // console.log(shoes)
+        console.log(shoes)
     }
 
     function listShoes(shoe){
+        console.log(`list shoes = ${shoe}`)
         const li = document.createElement('li')
-        li.innerText = shoe.name
+        li.innerText = `${shoe.hype_count} | ${shoe.name}`
         li.setAttribute('data-id', shoe.id)
         li.addEventListener('click', fetchShoeData)
         shoeList.appendChild(li)
@@ -47,8 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function showShoeForm(e){
         shoePage.innerText = ''
-        shoeForm.style.visibility = "visible"
-        console.log('Add Shoe Button Clicked')     
+        shoeForm.style.visibility = "visible"   
     }
 
     function postShoe(e){
@@ -80,7 +87,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function showShoe(shoe){
-        console.log(shoe)
         comments = shoe.comments
         shoeHype = shoe.hype_count
         shoeId = shoe.id
@@ -123,9 +129,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function patchShoeHype(e){
-        console.log(e)
         const shoeId = e.target.dataset.id
-        fetch(`http://localhost:3000/shoe/${shoeId}`, {
+        fetch(`http://localhost:3000/shoes/${shoeId}`, {
+
             method: "PATCH",
             headers: {
                 'Accept': 'application/json',
@@ -133,9 +139,18 @@ document.addEventListener("DOMContentLoaded", function() {
             },
             body: JSON.stringify({
                 hype_count: shoeHype
-            })
-        })
+            })   
+        }).then(reRenderShoeList)
     }
+
+    function reRenderShoeList(){
+        fetch(`http://localhost:3000/shoes`)
+        .then(r => r.json())
+        .then(shoes =>{
+            shoeList.innerText = ''
+            renderShoes(shoes)
+        })
+    } 
     
     function renderForm(shoeId){
         commentForm.innerText = ''
@@ -154,7 +169,6 @@ document.addEventListener("DOMContentLoaded", function() {
     
     function renderComments(comments){
         commentDiv.innerText = ''
-        console.log(comments)
         comments.reverse()
         const ul = document.createElement('ul')
         
@@ -180,7 +194,6 @@ document.addEventListener("DOMContentLoaded", function() {
     
     function postComment(e){
         e.preventDefault()
-        console.log(e)
         const name = e.target.elements[0].value
         const shoeComment = e.target.elements[1].value
         const shoeId = e.target.dataset.id
@@ -196,10 +209,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 name: name,
                 content: shoeComment
             })
-        })
-        
+
+        }).then()        
         reRenderShoe(shoeId)
         
-    }
-    
+    }    
 });
