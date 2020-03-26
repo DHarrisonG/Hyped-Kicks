@@ -30,16 +30,20 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function renderShoes(shoes){
-        console.log(shoes.sort( shoe => {
-            shoe.hype_count
-        }))
+        shoes.sort((a, b) => {
+            if (a.hype_count < b.hype_count){
+              return 1
+            } else {
+              return -1
+            }
+          })
         shoes.forEach(shoe => listShoes(shoe))
-        // console.log(shoes)
+        console.log(shoes)
     }
 
     function listShoes(shoe){
         const li = document.createElement('li')
-        li.innerText = shoe.name
+        li.innerText = `${shoe.hype_count} | ${shoe.name}`
         li.setAttribute('data-id', shoe.id)
         li.addEventListener('click', fetchShoeData)
         shoeList.appendChild(li)
@@ -125,6 +129,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function patchShoeHype(e){
         console.log(e)
         const shoeId = e.target.dataset.id
+        console.log(shoeHype)
         fetch(`http://localhost:3000/shoe/${shoeId}`, {
             method: "PATCH",
             headers: {
