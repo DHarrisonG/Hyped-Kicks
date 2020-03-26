@@ -7,8 +7,8 @@
 document.addEventListener("DOMContentLoaded", function() {
     const testDiv = document.createElement('div')
 
-    fetchShoes().then(renderShoes)
-
+    fetchShoes()
+    
     let shoeHype;
     let comments
 
@@ -27,6 +27,9 @@ document.addEventListener("DOMContentLoaded", function() {
     function fetchShoes(){
         return fetch('http://localhost:3000/shoes')
         .then(r => r.json())
+        .then(shoes => {
+            renderShoes(shoes)
+        })
     }
 
     function renderShoes(shoes){
@@ -42,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function listShoes(shoe){
+        console.log(`list shoes = ${shoe}`)
         const li = document.createElement('li')
         li.innerText = `${shoe.hype_count} | ${shoe.name}`
         li.setAttribute('data-id', shoe.id)
@@ -135,8 +139,18 @@ document.addEventListener("DOMContentLoaded", function() {
             body: JSON.stringify({
                 hype_count: shoeHype
             })
-        })
+            
+        }).then(reRenderShoeList)
     }
+
+    function reRenderShoeList(){
+        fetch(`http://localhost:3000/shoes`)
+        .then(r => r.json())
+        .then(shoes =>{
+            shoeList.innerText = ''
+            renderShoes(shoes)
+        })
+    } 
     
     function renderForm(shoeId){
         commentForm.innerText = ''
@@ -195,10 +209,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 name: name,
                 content: shoeComment
             })
-        })
+        }).then()
         
         reRenderShoe(shoeId)
         
     }
+
+
     
 });
