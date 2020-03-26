@@ -10,6 +10,7 @@ class CommentsController < ApplicationController
         puts comment_params
         @comment = Comment.create(comment_params)
         @comment.save
+        render json: @comment
     end
 end
 
