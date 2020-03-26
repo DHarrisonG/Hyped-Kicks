@@ -7,28 +7,33 @@
     <link rel="stylesheet" href="app/assets/stylesheets/index.css">
     <script src="app/javascript/channels/index.js"></script>
 </head>
+<header>
+	<div class ="header">
+		<a href="index.html"><img src="app/assets/images/logo1.png" alt="Hyped Kicks" /></a>
+	</div>
+</header>
 
 <body>
-	<div id="list-panel">
-		<button id="add-shoe-bttn">Add Shoe</button>
-
-		<ul id="list">
-
-		</ul>
+		<div id="list-panel">
+			<ul id="list"></ul>
+			<button id="add-shoe-bttn">Add Shoe</button>	
+		</div>
 	</div>
-	<div id="show-panel">
-	</div>
-	<div id="form-div">
+	
+	<div class = "centerpage">
+		<div id="form-div">
+		<div id="show-panel"></div>
 		<form id="shoe-form">
 			<label for="name">Name: </label><br>
 			<input type="text" name="name"><br>
 			<label for="description">Description: </label><br>
-			<textarea name="description"></textarea><br>
+			<textarea id = "sty" name="description" style="margin: 0px; height: 94px; width: 275px;"></textarea><br>
 			<label for="imgUrl">Image URL: </label><br>
 			<input type="text" name="imgUrl"><br><br>
-			<input type="submit" value="Submit">
+			<button type="submit" value="Submit">Submit</button>
 		</form>
 	</div>
+</div>
 </body>
 </html>
 

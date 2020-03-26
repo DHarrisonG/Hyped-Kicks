@@ -131,6 +131,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function patchShoeHype(e){
         const shoeId = e.target.dataset.id
         fetch(`http://localhost:3000/shoes/${shoeId}`, {
+
             method: "PATCH",
             headers: {
                 'Accept': 'application/json',
@@ -138,8 +139,7 @@ document.addEventListener("DOMContentLoaded", function() {
             },
             body: JSON.stringify({
                 hype_count: shoeHype
-            })
-            
+            })   
         }).then(reRenderShoeList)
     }
 
@@ -209,12 +209,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 name: name,
                 content: shoeComment
             })
-        }).then()
-        
+
+        }).then()        
         reRenderShoe(shoeId)
         
-    }
-
-
-    
+    }    
 });
