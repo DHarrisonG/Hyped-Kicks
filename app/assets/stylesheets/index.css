@@ -1,6 +1,11 @@
 body {
 	display: grid;
-	grid-template-columns: 2fr 8fr
+	grid-template-columns: 4fr 8fr
+}
+
+.form-div {
+	grid-column-start: 2;
+	grid-column-end: 2;
 }
 
 

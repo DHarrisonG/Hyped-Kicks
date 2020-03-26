@@ -16,15 +16,15 @@ class ShoesController < ApplicationController
     end
 
     def update
-        @shoe = Shoe.find(params[:id])
-        @shoe = Shoe.update(params[:hype_count])
-        @shoe.save
+        shoe = Shoe.find_by(id: params[:id])
+        shoe.update(hype_count: params[:hype_count])
+        render json: shoe
 
     end
 
     private
 
-    def shoe_params
-        params.require(:shoe).permit(:name, :description, :image_url, :hype_count )
-    end
+    # def shoe_params
+    #     params.require(:shoe).permit(:name, :description, :image_url, :hype_count )
+    # end
 end
