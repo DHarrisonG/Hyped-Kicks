@@ -16,9 +16,9 @@ class ShoesController < ApplicationController
     end
 
     def update
-        @shoe = Shoe.find(params[:id])
-        @shoe = Shoe.update(params[:hype_count])
-        @shoe.save
+        shoe = Shoe.find_by(id: params[:id])
+        shoe.update(hype_count: params[:hype_count])
+        render json: shoe
 
     end
 
