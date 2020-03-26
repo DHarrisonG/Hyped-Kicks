@@ -1,6 +1,5 @@
 body {
   background-color: #dfe6e9;
-
 }
 .header{
   background-color: #b2bec3;
@@ -69,7 +68,12 @@ div#show-panel{
 
 }
 
-h3#hype-counter{
-  margin-right: 0px;
+ul{
+  list-style-type: none;
 }
 
+p{
+  width: 60%;
+  text-align: ;
+  text-indent: 150px;
+}
