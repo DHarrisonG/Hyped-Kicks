@@ -4,36 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Hyped Kicks</title>
-    <link rel="stylesheet" href="app/assets/stylesheets/index.css">
+	<link rel="stylesheet" href="app/assets/stylesheets/index.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="app/javascript/channels/index.js"></script>
 </head>
-<header>
-	<div class ="header">
-		<a href="index.html"><img src="app/assets/images/logo1.png" alt="Hyped Kicks" /></a>
-	</div>
-</header>
 
 <body>
-		<div id="list-panel">
+	<div id="list-panel" class="sidenav">
+		<img id="logo" src="https://i.ibb.co/J7LMhyg/logo-copy.png" alt="Hyped Kicks" />
+		<button id="add-shoe-bttn">Add Shoe</button>	
+		<div id="menu">
 			<ul id="list"></ul>
-			<button id="add-shoe-bttn">Add Shoe</button>	
 		</div>
 	</div>
 	
-	<div class = "centerpage">
-		<div id="form-div">
-		<div id="show-panel"></div>
-		<form id="shoe-form">
-			<label for="name">Name: </label><br>
-			<input type="text" name="name"><br>
-			<label for="description">Description: </label><br>
-			<textarea id = "sty" name="description" style="margin: 0px; height: 94px; width: 275px;"></textarea><br>
-			<label for="imgUrl">Image URL: </label><br>
-			<input type="text" name="imgUrl"><br><br>
-			<button type="submit" value="Submit">Submit</button>
-		</form>
+	<div class = "main">
+		<div id="page-container">
+			<div id="show-panel">
+				<div id="homepage">
+					<img id="hp-image" src="https://media3.giphy.com/media/10NUIlSgW2W8jS/source.gif">
+				</div>
+			</div>
+			<div id="form-div">
+				<form id="shoe-form">
+					<label for="name">Name: </label><br>
+					<input type="text" name="name"><br>
+					<label for="description">Description: </label><br>
+					<textarea id = "sty" name="description" style="margin: 0px; height: 94px; width: 275px;"></textarea><br>
+					<label for="imgUrl">Image URL: </label><br>
+					<input type="text" name="imgUrl"><br><br>
+					<button type="submit" value="Submit">Submit</button>
+				</form>
+			</div>
+		</div>
+
 	</div>
-</div>
+
 </body>
 </html>
 

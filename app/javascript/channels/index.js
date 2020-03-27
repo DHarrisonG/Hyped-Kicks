@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const testDiv = document.createElement('div')
 
     fetchShoes()
+
+    const logoArray = []
     
     let shoeHype;
     let comments
