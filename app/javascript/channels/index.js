@@ -107,7 +107,8 @@ document.addEventListener("DOMContentLoaded", function() {
         shoePage.appendChild(hypeCounter)
 
         hypeButton = document.createElement('button')
-        hypeButton.innerText = 'HYPE IT!'
+        hypeButton.innerHTML = 'HYPE IT!'
+        hypeButton.id = "hypebttn"
         hypeButton.setAttribute('data-id', shoe.id)
         hypeButton.addEventListener('click', addHypePoints)
         shoePage.appendChild(hypeButton)
