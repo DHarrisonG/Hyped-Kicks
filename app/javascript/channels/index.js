@@ -107,7 +107,8 @@ document.addEventListener("DOMContentLoaded", function() {
         shoePage.appendChild(hypeCounter)
 
         hypeButton = document.createElement('button')
-        hypeButton.innerText = 'HYPE IT!'
+        hypeButton.innerHTML = 'HYPE IT!'
+        hypeButton.id = "hypebttn"
         hypeButton.setAttribute('data-id', shoe.id)
         hypeButton.addEventListener('click', addHypePoints)
         shoePage.appendChild(hypeButton)
@@ -131,6 +132,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function patchShoeHype(e){
         const shoeId = e.target.dataset.id
         fetch(`http://localhost:3000/shoes/${shoeId}`, {
+
             method: "PATCH",
             headers: {
                 'Accept': 'application/json',
@@ -138,8 +140,7 @@ document.addEventListener("DOMContentLoaded", function() {
             },
             body: JSON.stringify({
                 hype_count: shoeHype
-            })
-            
+            })   
         }).then(reRenderShoeList)
     }
 
@@ -209,12 +210,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 name: name,
                 content: shoeComment
             })
-        }).then()
-        
+
+        }).then()        
         reRenderShoe(shoeId)
         
-    }
-
-
-    
+    }    
 });

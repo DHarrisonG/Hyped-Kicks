@@ -1,6 +1,153 @@
-body {
-	display: grid;
-	grid-template-columns: 4fr 8fr
+#logo{
+	width: 100%;
+	margin-top: 10px;
 }
 
+body {
+	background-color: #dfe6e9;
+	margin: 0 !important;
+    padding: 0 !important;
+  }
+  /* /* .header{
+	background-color: #b2bec3;
+	max-width: 2000px;
+	height: 90px;
+	width: 1950x;
+	border: 2px solid #ffffff; */
 
+  
+  /* img{
+	max-height: 120%;
+	width: auto;
+  
+  } */
+  
+
+h1 {
+	font-family: Impact, Charcoal, sans-serif;
+	color: white;
+	background: red;
+	font-style: italic;
+	text-shadow: 2px 2px 4px #000000;
+}
+  
+  
+  form{
+	width: 30%;
+	padding: 20px;
+	font-family: Eccentric STD;
+  }
+  
+  input[type=text] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border: none;
+	border-bottom: 2px solid black;
+	background-color: #dfe6e9;
+	outline:none;
+  }
+  
+  button {
+	background-color: #b2bec3; 
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 17px;
+	margin: 4px 2px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	outline:none;
+  }
+  
+  button:hover {
+	background-color: red;
+	color: white;
+  }
+  
+  ul#list{
+	text-align:center;
+	font-family: Impact, Charcoal, sans-serif;
+	margin-top: 30px;
+	margin-left: 0px;
+	/* font-family: Eccentric STD; */
+  }
+  
+  div#show-panel{
+   margin-top: 5px;
+   padding: 0px;
+   text-align: center;
+  
+  }
+  
+  ul{
+	list-style-type: none;
+  }
+  
+  p{
+	width: 300px;
+	margin: 0 auto;
+  }
+
+  form#shoe-form{
+	width: 300px;
+	margin: 0 auto;
+  }
+
+  form{
+	width: 300px;
+	margin: 0 auto;
+  }
+
+
+
+
+  .sidenav {
+	height: 100%; /* Full-height: remove this if you want "auto" height */
+	width: 225px; /* Set the width of the sidebar */
+	position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+	z-index: 1; /* Stay on top */
+	top: 0; /* Stay at the top */
+	left: 0;
+	background-color: #ffffff; /* Black */
+	overflow-x: hidden; /* Disable horizontal scroll */
+	padding-top: 20px;
+}
+
+/* The navigation menu links */
+  .sidenav ul {
+	list-style-type: none;
+	padding: 6px 8px 6px 16px;
+	text-decoration: none;
+	font-size: 15px;
+	color: #000000;
+	display: block;
+}
+
+  /* When you mouse over the navigation links, change their color */
+  .sidenav li:hover {
+	  color: #f1f1f1;
+	  background: #fc0000;
+	  font-style: italic;
+	}
+	
+	#page-container{
+		text-align: center;
+	}
+	
+	/* Style page content */
+	.main {
+		margin-top: 50px;
+		margin-left: 160px; /* Same as the width of the sidebar */
+		padding: 0px 10px;
+	}
+
+	
+	/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+	.sidenav {padding-top: 15px;}
+	.sidenav a {font-size: 18px;}

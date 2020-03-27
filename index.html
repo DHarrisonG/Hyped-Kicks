@@ -9,26 +9,39 @@
 </head>
 
 <body>
-	<div id="list-panel">
-		<button id="add-shoe-bttn">Add Shoe</button>
-
-		<ul id="list">
-
-		</ul>
+	
+	<div id="list-panel" class="sidenav">
+		<header>
+			<div class ="header">
+				<a href="index.html"><img id="logo" src="https://i.ibb.co/J7LMhyg/logo-copy.png" alt="Hyped Kicks" /></a>
+			</div>
+		</header>
+		<ul id="list"></ul>
+	</ul>
+	<button id="add-shoe-bttn">Add Shoe</button>
 	</div>
-	<div id="show-panel">
-	</div>
-	<div id="form-div">
+	
+	<div class ="main">
+		<div id="show-panel">
+			<div id="homepage">
+				<img href="index.html" id="hp-image" src="https://media3.giphy.com/media/10NUIlSgW2W8jS/source.gif">
+			</div>
+		</div>
+		<div id="form-div">
+		<div id="show-panel"></div>
 		<form id="shoe-form">
 			<label for="name">Name: </label><br>
 			<input type="text" name="name"><br>
 			<label for="description">Description: </label><br>
-			<textarea name="description"></textarea><br>
+			<input type= "text" name="description"><br>
 			<label for="imgUrl">Image URL: </label><br>
 			<input type="text" name="imgUrl"><br><br>
-			<input type="submit" value="Submit">
+			<button>
+			<a type="submit" value="Submit">Submit</a>
+		</button>
 		</form>
 	</div>
+</div>
 </body>
 </html>
 
